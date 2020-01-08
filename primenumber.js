@@ -1,16 +1,15 @@
-const primeList = (start, end) => {
-  
-for (var i=start; i<=end; i++) {
-    
-    if((i%2===0)  || (i%3===0)){
-        return false;
+const isPrime = (start, end)=>{
+for (var i = start; i <= end; i++) {
+    var notPrime = false;
+    for (var j = 2; j <= i; j++) {
+        if (i%j===0 && j!==i) {
+            notPrime = true;
+        }
     }
-    else{
-       document.writeln(i+" "); 
+    if (notPrime === false) {
+                console.log(i);
     }
-  }
+}
 }
 
-const output = primeList(1,200);
-
-
+isPrime(1,100)
